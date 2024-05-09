@@ -42,7 +42,7 @@
               />
             </a>
           </li>
-          <li id="cart" class="header-li">
+          <li id="cart" class="icon hidden">
             <a class="header-a" href="./cart.html">
               <img
                 class="header-social-img"
@@ -50,10 +50,16 @@
               />
             </a>
           </li>
-          <li id="favs" class="header-li">
+          <li id="favs" class="icon hidden">
             <a class="header-a" href="./favorites.html">
               <img class="header-social-img" src="./assets/heart.png">
             </a>
+          </li>
+          <li id="user-icon" class="icon" onclick="toggleSession()">
+            <img class="header-social-img" src="./assets/user.png" alt="Ícono de usuario">
+          </li>
+          <li id="profile-icon" class="icon hidden" onclick="toggleSession()">
+            <img class="header-social-img" src="./assets/profile.png" alt="Ícono de perfil">
           </li>
         </ul>
       </div>
@@ -291,6 +297,7 @@
       </div>
       <div class="footer-copyright">Curso de HTML + CSS 2023</div>
     </footer>
+    <script src="./scripts/profile.js"></script>
     <script src="./scripts/layout.js"></script>
     <script src="./scripts/products.js"></script>
     <script src="./scripts/productDetail.js"></script>   
