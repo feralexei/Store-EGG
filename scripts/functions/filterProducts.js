@@ -5,5 +5,6 @@ export function filterProducts(event, products) {
     const searchText = event.target.value.toLowerCase(); // se convierte a minúsculas para poder compararse correctamente
     const filteredText = products.filter(product => product.name.toLowerCase().includes(searchText)); // filtrar el array de productos por aquellos cuyo nombre incluya el texto capturado
     
+    filteredText.sort((a, b) => a.name.localeCompare(b.name));
     printProductCards(filteredText, "products"); // actualiza la vista con una nueva impresión de las tarjetas
 }

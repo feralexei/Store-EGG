@@ -1,11 +1,12 @@
 export function createTotalTemplate(cartProducts) {
-    let total = 0;
-    if (cartProducts) {
-      for (const cartProduct of cartProducts) {
-        // Suma el subtotal de cada producto al total
-        total += cartProduct.subtotal;
-      }  
-    }
+    // let total = 0;
+    // if (cartProducts) {
+    //   for (const cartProduct of cartProducts) {
+    //     total += cartProduct.subtotal;
+    //   }  
+    // }
+    const total = cartProducts ? cartProducts.reduce((acc, cartProduct) => acc + cartProduct.subtotal, 0) : 0;
+
     return `
       <article class="cart-resume" id="total">
           <div class="cart-data">

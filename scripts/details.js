@@ -18,6 +18,7 @@ window.saveProduct = (id) => saveProduct(id, products);
 
 printNavBar(options, "nav");
 printFooter(options, "footer");
+
 printDetails(id, products);
 printFavoritesSection(favProducts);
 
