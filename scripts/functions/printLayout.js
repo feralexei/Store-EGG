@@ -1,31 +1,4 @@
-export const options = [
-  {
-    title: "Ofertas",
-    href: "./index.html",
-    refs: ["Laptops", "Audio", "Auticulares"],
-  },
-  {
-    title: "Cómo comprar",
-    href: "./index.html",
-    refs: ["Formas de pago", "Envios", "Devoluciones"],
-  },
-  {
-    title: "Costos y tarifas",
-    href: "./index.html",
-    refs: ["Impuestos", "Facturación"],
-  },
-  {
-    title: "Mis pedidos",
-    href: "./index.html",
-    refs: ["Pedir nuevamente", "Lista de deseos"],
-  },
-  { title: "Garantía", 
-    href: "./index.html", 
-    refs: ['Terminos y condiciones', 'Política de devoluciones'],
-  }
-];
-
-export function printNavBar(options, id) {
+function printNavBar(options, id) {
   let template = "";
   for (const option of options) {
     template =
@@ -39,8 +12,7 @@ export function printNavBar(options, id) {
   const selector = document.getElementById(id);
   selector.innerHTML = template;
 }
-
-export function printFooter(options, id) {
+function printFooter(options, id) {
   let template = "";
   for (const option of options) {
     template =
@@ -62,3 +34,24 @@ export function printFooter(options, id) {
   const selector = document.getElementById(id);
   selector.innerHTML = template;
 }
+
+document.addEventListener("DOMContentLoaded", async () => {
+  const options = await loadLayout();
+  printNavBar(options, "nav");
+  printFooter(options, "footer");
+});
+
+async function loadLayout() {
+  try {
+    const response = await fetch('./data/options.json');
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+    const data = await response.json();
+    return data.navbar; 
+  } catch (error) {
+    console.error('ERROR:', error);
+    return [];
+  }
+}
+export {loadLayout};

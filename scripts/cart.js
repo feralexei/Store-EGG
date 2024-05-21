@@ -1,4 +1,5 @@
-import { options, printNavBar, printFooter } from "./functions/printLayout.js";
+import { loadLayout } from "./functions/printLayout.js";
+import { loadProducts } from "./functions/printProductCards.js";
 import { createCartCard } from './functions/createCartCard.js';
 import { createEmptyCard } from './functions/createEmptyCard.js'
 import { createTotalTemplate } from './functions/createTotalTemplate.js';
@@ -25,8 +26,5 @@ window.addEventListener('DOMContentLoaded', function() {
     }
   });
 });
-
-printNavBar(options, "nav");
-printFooter(options, "footer");
 
 printCart(cartProducts, "cartproducts");

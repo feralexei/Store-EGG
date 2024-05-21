@@ -191,6 +191,14 @@ footer {
   cursor: pointer;
 }
 
+
+
+/* .swal2-icon .swal2-icon-show{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */
+
 /* REPSONSIVE */
 
 @media (max-width: 1200px) {

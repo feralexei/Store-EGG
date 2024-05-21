@@ -18,6 +18,14 @@ export function changeQuantity(event){
         cart[ProductIndex].quantity = newQuantity;
         cart[ProductIndex].subtotal = newSubtotal;
         localStorage.setItem("cart", JSON.stringify(cart));
+        Swal.fire({
+            position: 'top-end',
+            icon: 'info',
+            title: 'Cantidad actualizada',
+            text: `El subtotal del producto es $${newSubtotal}`,
+            showConfirmButton: false,
+            timer: 3000
+            });
     }   
     updateTotal();
 }

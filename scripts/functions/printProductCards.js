@@ -15,3 +15,18 @@ export function printProductCards(arrayOfProducts, idSelector) {
     productsSelector.innerHTML = "<h3 style='width: 100%; text-align: center'>No hay coincidencias</h3>";
   } 
 }
+
+async function loadProducts() {
+  try {
+    const response = await fetch('./data/products.json');
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+    const data = await response.json();
+    return data.products; 
+  } catch (error) {
+    console.error('ERROR:', error);
+    return [];
+  }
+}
+export {loadProducts};

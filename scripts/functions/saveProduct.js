@@ -20,6 +20,7 @@ export function saveProduct(id, products) {
     let cart = [];
     if (localStorage.getItem("cart")) { //verifica si existe un array de productos del cart
       cart = JSON.parse(localStorage.getItem("cart")); // actualiza el local storage con los productos existentes
+      Swal.fire('¡CANTIDAD ACTUALIZADA!', 'Se actualizó la cantidad de productos en el carrito', 'success');
       const ProductIndex = cart.findIndex(item => item.id == id);
   
       if (ProductIndex !== -1) { //verifica si el producto existe en el cart
@@ -27,9 +28,11 @@ export function saveProduct(id, products) {
         cart[ProductIndex].subtotal += addProduct.subtotal;
         } else {  // si no existe en el cart, agrega un producto al array
           cart.push(addProduct);
+          Swal.fire('¡NUEVO PRODUCTO!', 'Producto agregado al carrito', 'success');
       }
     } else {
         cart.push(addProduct); // si no existe un array de productos del cart, lo crea.
+        Swal.fire('¡NUEVO PRODUCTO!', 'Producto agregado al carrito', 'success');
       }
   
     localStorage.setItem("cart", JSON.stringify(cart));
