@@ -1,14 +1,16 @@
 import { userIcon, profileIcon, toggleSession } from "./functions/toggleSession.js";
+import { logoutUser } from "./auth.js";
 
-if(localStorage.getItem('isOnline') === null) {
-    localStorage.setItem('isOnline', 'false');
+if(sessionStorage.getItem('isOnline') === null) {
+    sessionStorage.setItem('isOnline', 'false');
 }
 userIcon.addEventListener('click', function() {
-    localStorage.setItem('isOnline', 'true');
-    toggleSession();
+    window.location.href = "login.html";
+    // localStorage.setItem('isOnline', 'true');
+    // toggleSession();
 });
 profileIcon.addEventListener('click', function() {
-    localStorage.setItem('isOnline', 'false');
+    logoutUser();
     toggleSession();
 });
 document.addEventListener('DOMContentLoaded', toggleSession);
