@@ -1,4 +1,6 @@
 //CREA UNA CARD PARA CADA PRODUCTO A PARTIR DE SUS DATOS
+import { loadProducts } from "./loadProducts.js";
+
 export function createCartCard(cartProduct) {
     return `
     <article id="product-cart-${cartProduct.id}" class="product-cart" data-price="${cartProduct.price}">

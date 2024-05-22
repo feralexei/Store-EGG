@@ -1,4 +1,4 @@
-import { loadProducts } from "./printProductCards.js";
+import { loadProducts } from "./loadProducts.js";
 
 export function filterProducts(event, products) {
     // Guarda el valor capturado por el evento en una variable "searchText"
