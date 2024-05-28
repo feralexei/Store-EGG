@@ -1,4 +1,3 @@
-import { Product } from "./products.js";
 import { loadProducts } from "./functions/loadProducts.js";
 import { loadLayout } from "./functions/printLayout.js";
 import { detailsSelector, printDetails, favoriteSelector, printFavoritesSection } from "./functions/printDetails.js";
@@ -23,6 +22,3 @@ document.addEventListener("DOMContentLoaded", async () => {
     printDetails(id, products);
     printFavoritesSection(favProducts);
 });
-
-
-

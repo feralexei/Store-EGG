@@ -1,4 +1,3 @@
-import { Product } from "./products.js";
 import { loadLayout } from "./functions/printLayout.js";
 import { createProductCard } from "./functions/createProductCard.js";
 import { loadProducts } from "./functions/loadProducts.js";

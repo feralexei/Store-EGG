@@ -1,5 +1,5 @@
 import { loadLayout } from "./functions/printLayout.js";
-import { loadProducts } from "./functions/printProductCards.js";
+import { loadProducts } from "./functions/loadProducts.js";
 import { createCartCard } from './functions/createCartCard.js';
 import { createEmptyCard } from './functions/createEmptyCard.js'
 import { createTotalTemplate } from './functions/createTotalTemplate.js';
